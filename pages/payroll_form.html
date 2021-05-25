@@ -6,7 +6,9 @@
     <link href="http://fontd.googleapis.com/css2?family=Robot:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/payroll_form.css">
     <title>Employee Payroll form</title>
-    <script defer src="../js/payroll_form.js"></script>
+		<script defer src="../js/EmployeePayr.js"></script>
+		<script defer src="../js/payroll_form.js"></script>
+		
 
 </head>
 <body>
@@ -157,17 +159,6 @@
 					</div>
 			</form>
 	</div>
-	<script>
-	/*UC8 - Set Event listner for salary range */
-	const salary = document.querySelector('#salary');
-	const output = document.querySelector('.salary-output');
-	output.textContent = salary.value;
-	salary.addEventListener('input', function() {
-			output.textContent = salary.value;
-	});
-
-	</script>
 	 
-	});
 </body>
 </html>
