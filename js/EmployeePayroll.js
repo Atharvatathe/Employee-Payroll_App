@@ -1,23 +1,24 @@
-class EmployeePayroll{
+class EmployeePayrollData {
 
     //gettert and Settert for id
-    get id() {return this.id;}
+    get id() {return this._id;}
     set id(id){
         this._id = id;
     }
 
     //gettert and Settert for name
     get name() {return this._name;}
+    
     set name(name){
-        let nameRegex = RegExp('^[A-Z]{1}[a-z]{3,}$');
+        let nameRegex = RegExp('^[A-Z]{1}[a-z]{2,}$');
         if(nameRegex.test(name))
             this._name = name;
-        else throw "Name is incorrect";
+        else throw 'Name is incorrect';
     }
 
     //gettert and Settert for profilePic
     get profilePic() {return this._profilePic};
-    set profilrPic(profilePic){
+    set profilePic(profilePic){
         this._profilePic = profilePic;
     }
 
@@ -29,9 +30,10 @@ class EmployeePayroll{
 
     //gettert and Settert for department
     get department() {return this._departmetnt;}
-    set department() {
-        this._departmetnt = this.department;
+    set department(department) {
+        this._department = department;
     }
+    
 
     //gettert and Settert for note
     get note() {return this._note;}
@@ -55,7 +57,7 @@ class EmployeePayroll{
     //method
     toString(){
         const options = {year: 'numeric', month: 'long', day: 'numeric'};   
-        const empDate = this.startDate === undefined ? "undefined" :
+        const empDate = !this.startDate ? "undefined" :
                         this.startDate.toLocaleDateString("en-US",options);
         return "id=" +this.id+ ", name=" +this.name+ ", salary=" +this.salary+
         ", Gender=" +this.gender+ ",department= "+this.department+ ", ProfilePic= "+this.profilePic+

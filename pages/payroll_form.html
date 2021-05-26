@@ -1,38 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="http://fontd.googleapis.com/css2?family=Robot:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/payroll_form.css">
-    <title>Employee Payroll form</title>
-		<script defer src="../js/EmployeePayr.js"></script>
-		<script defer src="../js/payroll_form.js"></script>
-		
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="http://fontd.googleapis.com/css2?family=Robot:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/payroll_form.css">
+<title>Employee Payroll form</title>
+<script defer src="../js/EmployeePayroll.js"></script>
+  <script defer src="../js/payroll_form.js"></script>
 </head>
 <body>
 	<!-- Uc 1 -->
 	<header class = "header-content header">
 			<div class = "logo-content">
-					<img src="../assets/images/logo.png" alt="">
-					<div>
-							<span class="emp-text">EMPLOYEE</span><br>
-							<span class="emp-text emp-payroll">PAYROLL</span>
-					</div>
+      <img src="../assets/images/logo.png" alt="">
+      <div>
+          <span class="emp-text">EMPLOYEE</span><br>
+          <span class="emp-text emp-payroll">PAYROLL</span>
+			</div>
 			</div>
 	</header>
 	<!--UC 2-->
-	<div class = "form-content">
+	<div id="formId" class="form-content">
 			<form class = "form" action="#"
-					onsubmit="save();return false">
+					onreset="resetForm()"   onsubmit="save(event);return false">
 					<div class ="form-head">
 							Employee Payroll form</div>
 					<div class="row-content">
-							<lable class = "lable text"
-									for="name">NAME</lable>
+							<lable class = "lable text" for="name">Name</lable>
 							<input class ="input" type="text" id="name"
-											name="name" aria-placeholder="Your Name..." required>
+											name="name" placeholder="Your name..." required>
+							<error-output class ="text-error" for="text"></error-output> 	
 					</div>
 					<div class="row-content">
 						<label class="label text" for="profile">Profile Image</label>
@@ -158,7 +156,6 @@
 						</div>	
 					</div>
 			</form>
-	</div>
-	 
+	</div> 
 </body>
 </html>
