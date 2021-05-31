@@ -29,7 +29,7 @@ class EmployeePayrollData {
     }
 
     //gettert and Settert for department
-    get department() {return this._departmetnt;}
+    get department() {return this._department;}
     set department(department) {
         this._department = department;
     }
