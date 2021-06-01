@@ -17,7 +17,23 @@ name.addEventListener('input', function () {
         textError.textContent = e;
     }
 
-    });
+});
+
+//Date validation
+const date = document.querySelector('#date');
+window.addEventListener('input', function(){
+    const startDate = new Date(Date.parse(getInputValuesById('#day')+" "+
+                                                             ('#month')+" "+
+                                                             ('#year')));
+    try{
+        (new EmployeePayrollData()).startDate = startDate;
+        setTextValue('.date-error',"");
+    }catch(e){
+        setTextValue('.date-error',e);
+    }                                                    
+});
+
+
 
 const salary = document.querySelector('#salary');
 const output = document.querySelector('.salary-output');

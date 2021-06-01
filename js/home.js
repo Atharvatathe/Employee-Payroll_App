@@ -24,7 +24,7 @@ const createInnerHTML = () => {
             <td>${employeePayrollData._startDate}</td>
             <td> 
                 <img name="${employeePayrollData._id}" onclick="remove(this)" alt="delete" src="../assets/icons/delete-black-18dp.svg">
-                <img name="${employeePayrollData._id}" alt="edit" onclick="update(this)" src="../assets/icons/create-black-18dp.svg">
+                <img name="${employeePayrollData._id}" onclick="update(this)" alt="Edit"   src="../assets/icons/create-black-18dp.svg">
             </td>
         </tr>
         `;
@@ -53,5 +53,5 @@ const remove = (node) => {
     empPayrollList.splice(index, 1);
     localStorage.setItem("EmployeePayrollList", JSON.stringify(empPayrollList));
     document.querySelector(".emp-count").textContent = empPayrollList.length;
-    createInnerHtml();
+    createInnerHTML();
 }
