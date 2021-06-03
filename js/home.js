@@ -51,11 +51,11 @@ const getDeptHtml = (deptList) => {
 
 // remove employee details from payroll list
 const remove = (node)=> {
-    let employeePayrollData = empPayrollList.find(empData=>empData._id == node.id);
+    let employeePayrollData = empPayrollList.find(empData=>empData.id == node.id);
     if (!employeePayrollData) return;
     const index = empPayrollList
-                  .map(empData=>empData._id)
-                  .indexOf(employeePayrollData._id);
+                  .map(empData=>empData.id)
+                  .indexOf(employeePayrollData.id);
     empPayrollList.splice(index,1);
     localStorage.setItem("EmployeePayrollList",JSON.stringify(empPayrollList));
     document.querySelector('.emp-count').textContent = empPayrollList.length;
@@ -63,7 +63,7 @@ const remove = (node)=> {
 }
 
 const update = (node) => {
-    let employeePayrollData = empPayrollList.find(empData=>empData._id == node.id);
+    let employeePayrollData = empPayrollList.find(empData=>empData.id == node.id);
     if (!employeePayrollData) return;
     localStorage.setItem('editEmp',JSON.stringify(employeePayrollData));
     window.location.replace("../pages/book_form.html");    
